@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arogya - Patient Dashboard</title>
+    <link rel="stylesheet" href="patient-dashboard.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <!-- <img src="/api/placeholder/40/40" alt="Arogya Logo"> -->
+          <h1>Arogya</h1>
+        </div>
+        <div class="user-profile">
+          <div class="notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-badge">3</span>
+          </div>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqf0Wx4wmsKfLYsiLdBx6H4D8bwQBurWhx5g&s"
+            alt="User Profile"
+            class="profile-pic"
+            id="profile-pic"
+          />
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <a href="#" class="menu-item active">
+          <i class="fa-solid fa-house"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+        <a href="#" class="menu-item">
+          <i class="fa-regular fa-calendar-check"></i>
+          <span class="menu-title">Appointments</span>
+        </a>
+        <a href="#" class="menu-item">
+          <i class="fa-solid fa-user-doctor"></i>
+          <span class="menu-title">Find Doctors</span>
+        </a>
+        <div class="divider"></div>
+        <div class="menu-section">Health Records</div>
+        <a href="#" class="menu-item">
+          <i class="fa-regular fa-file-lines"></i>
+          <span class="menu-title">Test Results</span>
+        </a>
+        <a href="#" class="menu-item">
+          <i class="fa-solid fa-pills"></i>
+          <span class="menu-title">Medications</span>
+        </a>
+        <a href="#" class="menu-item">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span class="menu-title">Vitals</span>
+        </a>
+        <div class="divider"></div>
+        <a href="#" class="menu-item">
+          <i class="fa-solid fa-gear"></i>
+          <span class="menu-title">Settings</span>
+        </a>
+        <a href="#" class="menu-item">
+          <i class="fa-solid fa-circle-info"></i>
+          <span class="menu-title">Help</span>
+        </a>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <h1 class="page-title">Dashboard</h1>
+
+        <!-- Dashboard Stats -->
+        <div class="dashboard-stats">
+          <div class="stat-card">
+            <div class="title">Upcoming Appointments</div>
+            <div class="value"><%= appointments.length %></div>
+            <div class="change positive">+1 from last month</div>
+          </div>
+          <div class="stat-card">
+            <div class="title">Wellness Score</div>
+            <div class="value">87<span style="font-size: 16px">/100</span></div>
+            <div class="change positive">+5 points since last check</div>
+          </div>
+          <div class="stat-card">
+            <div class="title">Medications</div>
+            <div class="value">2</div>
+            <div class="change">No change</div>
+          </div>
+        </div>
+
+        <!-- Upcoming Appointments -->
+        <div class="upcoming-appointments">
+          <div class="section-title">
+            <span>Upcoming Appointments</span>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="appointment-list">
+            <% if (appointments.length === 0) { %>
+                <p>No appointments scheduled</p>
+            <% } else { %>
+                <% appointments.forEach(appointment => { %>
+                    <div class="appointment-card">
+                        <img src="https://www.shutterstock.com/image-vector/doctor-icon-design-template-vector-600nw-1343960477.jpg"
+                            alt="<%= appointment.doctorName %>" class="doctor-avatar" />
+        
+                        <div class="appointment-details">
+                            <div class="doctor-name"><%= appointment.doctorName %></div>
+                            <div class="appointment-specialty"><%= appointment.specialization %></div>
+                            <div class="appointment-time">
+                                <i class="fa-regular fa-calendar"></i> <%= appointment.date %>
+                            </div>
+                        </div>
+        
+                        <div class="appointment-actions">
+                            <button class="btn btn-outline">Reschedule</button>
+                            <button class="btn btn-primary" onclick="bookDoctor()">Join</button>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+          </div>
+        
+
+        <!-- Recent Health Records -->
+        <div class="health-records">
+          <div class="section-title">
+            <span>Recent Health Records</span>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <table class="records-table">
+            <thead>
+              <tr>
+                <th>Test Name</th>
+                <th>Date</th>
+                <th>Result</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Blood Pressure</td>
+                <td>5 Mar 2025</td>
+                <td>120/80 mmHg</td>
+                <td><span class="status-badge status-normal">Normal</span></td>
+              </tr>
+              <tr>
+                <td>Blood Sugar (Fasting)</td>
+                <td>28 Feb 2025</td>
+                <td>110 mg/dL</td>
+                <td>
+                  <span class="status-badge status-attention">Borderline</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Cholesterol</td>
+                <td>15 Feb 2025</td>
+                <td>190 mg/dL</td>
+                <td><span class="status-badge status-normal">Normal</span></td>
+              </tr>
+              <tr>
+                <td>Hemoglobin</td>
+                <td>10 Feb 2025</td>
+                <td>13.5 g/dL</td>
+                <td><span class="status-badge status-normal">Normal</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+      <!-- AI Assistant and Doctor Recommendations -->
+      <div class="ai-doctor-section">
+        <!-- AI Assistant -->
+        <div class="ai-assistant"></div>
+
+        <!-- Doctor Recommendations -->
+        <div class="doctor-recommendations">
+          <div class="recommendation-header">
+            <h3>Recommended Doctors</h3>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="doctor-list"></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+    </div>
+    <footer>
+      <p>&copy; 2025 Arogya. All rights reserved.</p>
+    </footer>
+    <!-- D:\Projects\g_bot\client\build\static\js\main.60c352fa.js -->
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+/* ChatWindow.css */
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in width/height */
+}
+
+body {
+  margin: 0; /* Remove default margins */
+  font-family: 'Arial', sans-serif; /* Set a nice font */
+  background-color: #f0f2f5; /* Light background color for the page */
+}
+
+.chat-window {
+  width: 100%; /* Occupies 70% of the screen width */
+  max-width: 800px; /* Maximum width for larger screens */
+  height: 88vh; /* Full height of the browser window */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0; /* Border for the chat window */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-color: #ffffff; /* White background */
+  overflow: hidden; /* Ensure no overflow outside the border */
+}
+
+.chat-heading{
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.message-container {
+  flex: 1; /* Takes up remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Allow scrolling if messages overflow */
+}
+
+.message {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px; /* Rounded corners */
+  max-width: 75%; /* Limit message width */
+  font-size: 16px; /* Font size */
+}
+
+.user-message {
+  background-color: #007bff; /* Blue for user messages */
+  color: white; /* White text for better contrast */
+  align-self: flex-end; /* Align user messages to the right */
+  margin-left: auto; /* Push user messages to the right */
+}
+
+.bot-message {
+  background-color: #e0e0e0; /* Light gray for bot messages */
+  color: #333; /* Dark text for bot messages */
+  align-self: flex-start; /* Align bot messages to the left */
+}
+
+
+
+
+.input-area {
+  height:15%;
+  position: relative; /* Enable positioning for child elements */
+  padding: 10px;
+  background-color: #f9f9f9; /* Light gray background for input area */
+  border-top: 1px solid #e0e0e0; /* Border for separation */
+}
+
+/* New wrapper for input and button */
+.input-wrapper {
+  
+  display: flex; /* Flex for input and button */
+  flex: 1; /* Take up remaining space */
+}
+
+.input {
+  width: 90%; /* Full width */
+  height:100%;
+  border: 1px solid #e0e0e0; /* Light gray border */
+   /* Rounded input field */
+  font-size: 16px; /* Font size */
+  overflow: "auto";
+  scrollbar-width: none;/* Firefox */
+  -ms-overflow-style: none;/* IE & Edge */
+  resize:none;
+  
+  
+}
+
+
+.input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove outline */
+}
+
+.send-button {
+  position: absolute; /* Absolute positioning */
+  right: 15px; /* Position button to the right */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust to center */
+  padding: 10px 15px; /* Adjust padding */
+  border: none; /* Remove border */
+  border-radius: 20px; /* Rounded button */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.send-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .chat-window {
+  width: 400px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message-container {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 75%;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #d1f0f0;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.send-button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send-button:hover {
+  background-color: #0056b3;
+} */

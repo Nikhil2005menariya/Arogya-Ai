@@ -1,0 +1,221 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-Screen Chat Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+    color: #444;
+}
+
+/* Back Button */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #388E3C;
+}
+
+/* Chat Heading */
+.chat-heading {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Call Button */
+.call-btn {
+    background: #00B0FF;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.call-btn:hover {
+    background: #0288D1;
+}
+
+/* Chat Box */
+.chat-box {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow-y: auto;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Message Styling */
+.chat-message {
+    padding: 12px;
+    border-radius: 20px;
+    max-width: 70%;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    color: #333;
+    border-bottom-right-radius: 5px;
+}
+
+.received {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    color: #444;
+    border-bottom-left-radius: 5px;
+}
+
+/* Message Input Section */
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+.message-input {
+    width: 80%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.message-input:focus {
+    border-color: #00B0FF;
+}
+
+.send-btn {
+    padding: 12px 20px;
+    background: #00B0FF;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background: #0288D1;
+}
+
+/* Incoming Call Popup */
+.incoming-call {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.call-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.call-controls button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.call-controls button:hover {
+    background: #388E3C;
+}
+
+/* Video Call Container */
+.video-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+video {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+#end-call {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#end-call:hover {
+    background-color: #f44336;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <button class="back-btn" onclick="goBack()">Back</button>
+        <h1 class="chat-heading">Chat Room</h1>
+
+        <!-- Call Button (Moved Up) -->
+        <button id="call-btn" class="call-btn">Start Call</button>
+
+        <!-- Chat Box -->
+        <div class="chat-box" id="chat-box">
+            <p class="no-messages">No messages yet</p>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Enter Message" class="message-input" />
+            <button id="send-btn" class="send-btn">Send</button>
+        </div>
+
+        <!-- Incoming Call Popup -->
+        <div id="incoming-call" class="incoming-call">
+            <p>Incoming Call...</p>
+            <div class="call-controls">
+                <button id="accept-call">Accept</button>
+                <button id="reject-call">Reject</button>
+            </div>
+        </div>
+
+        <!-- Video Call Container -->
+        <div id="video-container" class="video-container">
+            <video id="local-video" autoplay muted></video>
+            <video id="remote-video" autoplay></video>
+            <button id="end-call">End Call</button>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
