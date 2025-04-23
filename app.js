@@ -30,7 +30,7 @@ app.use(cors());
 const io = new Server(httpServer, {
   // Use httpServer here
   cors: {
-    origin: "http://localhost:3000", // Allow requests from Vite
+    origin: "https://healthai-arogya.onrender.com", // Allow requests from Vite
     methods: ["GET", "POST"],
   },
 });
