@@ -79,7 +79,7 @@ io.on("connection", (socket) => {
     });
   });
 
-const mongoURI = "mongodb://localhost:27017";
+const mongoURI = "mongodb+srv://likicodes:Fp4EBLlKKqDNW0jR@cluster0.guqbke6.mongodb.net/";
 const dbName = "arogya"; // Updated to match new project
 MongoClient.connect(mongoURI)
   .then((client) => {
